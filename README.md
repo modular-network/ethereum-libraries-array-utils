@@ -20,10 +20,10 @@ An array utility library [provided by Modular](https://modular.network "Modular'
   - [Array16Lib](#array16lib)
   - [Array8Lib](#array8lib)
 - [License and Warranty](#license-and-warranty)
-- [How to install](#how-to-install)
-  - [Truffle Installation](#truffle-installation)
-    - [Manual install:](#manual-install)
-    - [Testing the library in truffle](#testing-the-library-in-truffle)
+- [Installation and Usage](#installation-and-usage)
+  - [How to install](#how-to-install)
+    - [How to link](#how-to-link)
+  - [Testing](#testing)
   - [solc Installation](#solc-installation)
     - [With standard JSON input](#with-standard-json-input)
     - [solc without standard JSON input](#solc-without-standard-json-input)
@@ -31,7 +31,8 @@ An array utility library [provided by Modular](https://modular.network "Modular'
   - [solc-js Installation](#solc-js-installation)
     - [Solc-js Installation via Linking](#solc-js-installation-via-linking)
     - [Solc-js documentation](#solc-js-documentation)
-- [Basic Usage](#basic-usage)
+- [Overview](#overview)
+  - [Basic Usage](#basic-usage)
   - [Usage Example](#usage-example)
   - [Usage Note](#usage-note)
 - [Functions](#functions)
@@ -58,40 +59,28 @@ An array utility library [provided by Modular](https://modular.network "Modular'
 ## Library Addresses
 
 ### Array256Lib   
-**ENS**: TBD   
-**Main Ethereum Network**: 0xD620Ce17fC516671F0fA84Ac88e39dCBb0a1615A   
-**Rinkeby Test Network**: 0x8d05ae16246A22dc8C75bcF8De6c418782c174f5   
-**Ropsten Test Network**: 0x2a54B21BA120BEd011356EAF11Dc6e5CA8132B91    
+**Main Ethereum Network**: 0xE258E2Ed46163eB08977ADE5A935079AFF1B2053   
+**Rinkeby Test Network**: 0xbe977ea7aae183528c1e3d4950ba95cfd867c1ad   
 
 ### Array128Lib   
-**ENS**: TBD   
-**Main Ethereum Network**: 0xaaed720C987B25E8CC0f4C0d1827F8b0C8545B41   
-**Rinkeby Test Network**: 0x31D5f41761D4145433b6F39C59781Ae331148C4F   
-**Ropsten Test Network**: 0x3EA41321B4787262827fD76D33f1ddfa76A47184    
+**Main Ethereum Network**: 0xCD52b34a42E8302050e8Df012E286493e371196B   
+**Rinkeby Test Network**: 0x523ca3cf413fda367c7c77287806a2dde7c39b3c   
 
 ### Array64Lib   
-**ENS**: TBD   
-**Main Ethereum Network**: 0xa13533142ddd31dDb2C9DA7F82BB083696182C71   
-**Rinkeby Test Network**: 0x5b597FD52bbE6455E0A86006C6Fd8FECA2785Ff0   
-**Ropsten Test Network**: 0xc0cCE76F81D5c6694b7adA58855E372899B2b005    
+**Main Ethereum Network**: 0x0a58508723737061B5b464dCF0E840F760c50db9   
+**Rinkeby Test Network**: 0xdce9e7b82e2bc35fb383d76644402da1d4dc6518    
 
 ### Array32Lib   
-**ENS**: TBD   
-**Main Ethereum Network**: 0x58ab2F692C606c520ACaf784FE4F0553ccD4Db8a   
-**Rinkeby Test Network**: 0xd1Cd92b015f483255f8a305D2c7a99E0A0B4d818   
-**Ropsten Test Network**: 0x144AEAF15EC3f9850cc88F31928F3a55cB849360    
+**Main Ethereum Network**: 0x5c8bc089E0B5D7Acc066020872F5968708f25BF3   
+**Rinkeby Test Network**: 0xfa8b2630ffcc0f755aac19c4fbc32fa40957d4fa   
 
 ### Array16Lib   
-**ENS**: TBD   
-**Main Ethereum Network**: 0xb6Cbc04D803d323f678b430751a8ED23276A5A57   
-**Rinkeby Test Network**: 0x90AdcDa446f6f42583965A13FF1703b094090BA3   
-**Ropsten Test Network**: 0xC94821766f2C8c2a98BA5532C5ea7ea174A140E2    
+**Main Ethereum Network**: 0xB7B005615878EdeE1D7d9C3eaBD19f57120C9982   
+**Rinkeby Test Network**: 0xde89c9f106979ec20d6ed2d21ca6b214eaad4580   
 
 ### Array8Lib   
-**ENS**: TBD   
-**Main Ethereum Network**: 0x85D2317f73e45bF266283b653B7407C95c0D2Ba6   
-**Rinkeby Test Network**: 0x41773f6A40C4A8049225b3E2ADCe67326fb023da   
-**Ropsten Test Network**: 0xe1ca2c0C8ec95b20E6f8a02318441221b232C3B6   
+**Main Ethereum Network**: 0x63cD1d8D592742F2157513B5e4510d46CA3F1376   
+**Rinkeby Test Network**: 0x7811ffaecf8fa90a6dde2dba97c5f5388db5f22c   
 
 ## License and Warranty
 
@@ -107,26 +96,20 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTIO
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## How to install
+## Installation and Usage
 
-### Truffle Installation
+### How to install
 
-**version 4.0.1**
+`npm install ethereum-libraries-basic-math`
 
-First install truffle via npm using `npm install -g truffle` .
-
-Please [visit Truffle's installation guide](http://truffleframework.com/docs/getting_started/installation "Truffle installation guide") for further information and requirements.
-
-#### Manual install:
+#### How to link
 
 This process will allow you to both link your contract to the current on-chain library as well as deploy it in your local environment for development.
 
-1. Place the Array256Lib.sol file in your truffle `contracts/` directory.
-2. Place the Array256Lib.json file in your truffle `build/contracts/` directory.
-3. Amend the deployment .js file in your truffle `migrations/` directory as follows:
+Amend the deployment .js file in your truffle `migrations/` directory as follows:
 
 ```js
-var Array256Lib = artifacts.require("./Array256Lib.sol");
+var Array256Lib = artifacts.require("ethereum-libraries-array-utils/build/contracts/Array256Lib.json");
 var OtherLibs = artifacts.require("./OtherLibs.sol");
 var YourOtherContract = artifacts.require("./YourOtherContract.sol");
 ...
@@ -140,22 +123,15 @@ module.exports = function(deployer) {
 
 **Note**: The `.link()` function should be called *before* you `.deploy(YourOtherContract)`. Also, be sure to include the `{overwrite: false}` when writing the deployer i.e. `.deploy(Array256Lib, {overwrite: false})`. This prevents deploying the library onto the main network or Rinkeby test network at your cost and uses the library already on the blockchain. The function should still be called however because it allows you to use it in your development environment. *See below*
 
-#### Testing the library in truffle
+### Testing
 
-The following process will allow you to `truffle test` this library in your project.
+Test: `npm run test`  
 
-1. Clone or download the ethereum-libraries repository into its own directory on your computer. You can also use subversion to download just this truffle directory by running `svn checkout https://github.com/Modular-Network/ethereum-libraries/trunk/ArrayUtilsLib/truffle`.    
-   Each folder in the truffle directory correlates to the folders in your truffle project.   
-2. Go into the ArrayUtilsLib truffle directory on your computer and place each file in their respective directory in **your** truffle project.
-   **Note**: The `2_deploy_test_contracts.js` file should either be renamed to the next highest number among your migrations files i.e. `3_deploy_test_contracts.js` or you can place the code in your existing deployment migration file. *See Quick Install above.*
-3. [Download and start Ganache](http://truffleframework.com/ganache/ "Ganache Download")
-4. In your terminal go to your truffle project directory.
-5. Ensure the `development` object in your truffle.js file points to the same port Ganache uses, default is 7545.
-6. Run `truffle test`.   
+Test Coverage: `npm run test:coverage`
 
 ### solc Installation
 
-**version 0.4.18**
+**version 0.4.21**
 
 For direction and instructions on how the Solidity command line compiler works [see the documentation](https://solidity.readthedocs.io/en/develop/using-the-compiler.html#using-the-commandline-compiler "Solc CLI Doc").
 
@@ -181,7 +157,7 @@ For direction and instructions on how the Solidity command line compiler works [
     ...
     "libraries": {
       "YourContract.sol": {
-        "Array256Lib": "0xD620Ce17fC516671F0fA84Ac88e39dCBb0a1615A"
+        "Array256Lib": "0xE258E2Ed46163eB08977ADE5A935079AFF1B2053"
       }
     }
   }
@@ -193,11 +169,11 @@ For direction and instructions on how the Solidity command line compiler works [
 
 When creating unlinked binary, the compiler currently leaves special substrings in the compiled bytecode in the form of '__LibraryName______' which leaves a 20 byte space for the library's address. In order to include the deployed library in your bytecode add the following flag to your command:
 
-`--libraries "Array256Lib:0xD620Ce17fC516671F0fA84Ac88e39dCBb0a1615A"`
+`--libraries "Array256Lib:0xE258E2Ed46163eB08977ADE5A935079AFF1B2053"`
 
 Additionally, if you have multiple libraries, you can create a file with one library string per line and include this library as follows:
 
-`"Array256Lib:0xD620Ce17fC516671F0fA84Ac88e39dCBb0a1615A"`
+`"Array256Lib:0xE258E2Ed46163eB08977ADE5A935079AFF1B2053"`
 
 then add the following flag to your command:
 
@@ -205,7 +181,7 @@ then add the following flag to your command:
 
 Finally, if you have an unlinked binary already stored with the '__LibraryName______' placeholder, you can run the compiler with the --link flag and also include the following flag:
 
-`--libraries "Array256Lib:0xD620Ce17fC516671F0fA84Ac88e39dCBb0a1615A"`
+`--libraries "Array256Lib:0xE258E2Ed46163eB08977ADE5A935079AFF1B2053"`
 
 #### solc documentation
 
@@ -213,7 +189,7 @@ Finally, if you have an unlinked binary already stored with the '__LibraryName__
 
 ### solc-js Installation
 
-**version 0.4.18**
+**version 0.4.21**
 
 Solc-js provides javascript bindings for the Solidity compiler and [can be found here](https://github.com/ethereum/solc-js "Solc-js compiler"). Please refer to their documentation for detailed use.
 
@@ -242,7 +218,7 @@ var input = {
     ...
     "libraries": {
       "YourContract.sol": {
-        "Array256Lib": "0xD620Ce17fC516671F0fA84Ac88e39dCBb0a1615A"
+        "Array256Lib": "0xE258E2Ed46163eB08977ADE5A935079AFF1B2053"
       }
     }
     ...
@@ -259,16 +235,18 @@ var output = JSON.parse(solc.compileStandardWrapper(JSON.stringify(input)));
 Solc-js also provides a linking method if you have compiled binary code already with the placeholder. To link this library the call would be:
 
  ```js
- bytecode = solc.linkBytecode(bytecode, { 'Array256Lib': '0xD620Ce17fC516671F0fA84Ac88e39dCBb0a1615A' });
+ bytecode = solc.linkBytecode(bytecode, { 'Array256Lib': '0xE258E2Ed46163eB08977ADE5A935079AFF1B2053' });
  ```
 
 #### Solc-js documentation
 
 [See the Solc-js documentation for further information](https://github.com/ethereum/solc-js "Solc-js compiler").
 
-## Basic Usage
+## Overview
 
-*Disclaimer: While we make every effort to produce professional grade code we can not guarantee the security and performance of these libraries in your smart contracts. Please use good judgement and security practices while developing, we do not take responsibility for any issues you, your customers, or your applications encounter when using these open source resources.
+### Basic Usage
+
+**Disclaimer:** While we make every effort to produce professional grade code we can not guarantee the security and performance of these libraries in your smart contracts. Please use good judgement and security practices while developing, we do not take responsibility for any issues you, your customers, or your applications encounter when using these open source resources.
 
 For a detailed explanation on how libraries are used please read the following from the Solidity documentation:
 
@@ -282,9 +260,9 @@ When using the `indexOf` function be sure to provide a return tuple and check to
 ### Usage Example
 
 ```
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.21;
 
-import "./Array256Lib.sol";
+import "example-libraries-array-utils/contracts/Array256Lib.sol";
 
 contract YourContract {
   using Array256Lib for uint256[];
@@ -315,7 +293,7 @@ Binding the library allows you to call the function in the format array.function
 
 ### Usage Note
 
-All of the functions only accept storage arrays containing the approprate uint type.
+All of the functions only accept storage arrays containing the appropriate uint type.
 
 ## Functions
 
@@ -377,7 +355,7 @@ Sorts the given array.
 **uint256[] storage** self   
 
 #### uniq(uint256[] storage) public returns (uint256)
-*(Array256Lib.sol, line 209)*
+*(Array256Lib.sol, line 211)*
 
 Removes duplicates from a given array.
 

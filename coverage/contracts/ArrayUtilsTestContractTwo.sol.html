@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">83.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/12</span>
+        <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">83.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>10/12</span>
+        <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">86.89% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>106/122</span>
+        <span class='fraction'>106/106</span>
       </div>
     </div>
   </div>
@@ -206,30 +206,7 @@
 161
 162
 163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+164</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -367,18 +344,6 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -390,17 +355,6 @@
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -441,7 +395,7 @@ contract ArrayUtilsTestContractTwo {
 &nbsp;
   event Print(string message, bytes32 test);
 &nbsp;
-  function getSortedIndexOf256(uint256 value) returns (bool,uint256){
+  function getSortedIndexOf256(uint256 value) public returns (bool,uint256){
     delete array256;
     array256.push(1);
     array256.push(3);
@@ -453,7 +407,7 @@ contract ArrayUtilsTestContractTwo {
     return array256.indexOf(value,true);
   }
 &nbsp;
-  function getSortedIndexOf128(uint128 value) returns (bool,uint256) {
+  function getSortedIndexOf128(uint128 value) public returns (bool,uint256) {
     delete array128;
     array128.push(0);
     array128.push(1);
@@ -469,7 +423,7 @@ contract ArrayUtilsTestContractTwo {
     return array128.indexOf(value,true);
   }
 &nbsp;
-  function getSortedIndexOf64(uint64 value) returns (bool,uint256) {
+  function getSortedIndexOf64(uint64 value) public returns (bool,uint256) {
     delete array64;
     array64.push(0);
     array64.push(1);
@@ -485,7 +439,7 @@ contract ArrayUtilsTestContractTwo {
     return array64.indexOf(value,true);
   }
 &nbsp;
-  function getSortedIndexOf32(uint32 value) returns (bool,uint256) {
+  function getSortedIndexOf32(uint32 value) public returns (bool,uint256) {
     delete array32;
     array32.push(0);
     array32.push(1);
@@ -501,7 +455,7 @@ contract ArrayUtilsTestContractTwo {
     return array32.indexOf(value,true);
   }
 &nbsp;
-  function getSortedIndexOf16(uint16 value) returns (bool,uint256) {
+  function getSortedIndexOf16(uint16 value) public returns (bool,uint256) {
     delete array16;
     array16.push(0);
     array16.push(1);
@@ -517,7 +471,7 @@ contract ArrayUtilsTestContractTwo {
     return array16.indexOf(value,true);
   }
 &nbsp;
-  function getSortedIndexOf8(uint8 value) returns (bool,uint256) {
+  function getSortedIndexOf8(uint8 value) public returns (bool,uint256) {
     delete array8;
     array8.push(0);
     array8.push(1);
@@ -533,7 +487,7 @@ contract ArrayUtilsTestContractTwo {
     return array8.indexOf(value,true);
   }
 &nbsp;
-  function getUnsortedIndexOf256(uint256 value) returns (bool,uint256) {
+  function getUnsortedIndexOf256(uint256 value) public returns (bool,uint256) {
     delete array256;
     array256.push(7);
     array256.push(0xffff);
@@ -544,7 +498,7 @@ contract ArrayUtilsTestContractTwo {
     return array256.indexOf(value,false);
   }
 &nbsp;
-  function getUnsortedIndexOf64(uint64 value) returns (bool,uint256) {
+  function getUnsortedIndexOf64(uint64 value) public returns (bool,uint256) {
     delete array64;
     array64.push(7);
     array64.push(0xffff);
@@ -555,19 +509,7 @@ contract ArrayUtilsTestContractTwo {
     return array64.indexOf(value,false);
   }
 &nbsp;
-&nbsp;
-<span class="fstat-no" title="function not covered" >  function getUnsortedIndexOf128(uint128 value) returns (bool,uint256) </span>{
-    delete array128;
-    array128.push(7);
-    array128.push(0xffff);
-    array128.push(3);
-    array128.push(1);
-    array128.push(9);
-    array128.push(1095);
-<span class="cstat-no" title="statement not covered" >    return array128.indexOf(value,false);</span>
-  }
-&nbsp;
-  function getNoIndexOf256(uint256 value, bool isSorted) returns (bool,uint256) {
+  function getNoIndexOf256(uint256 value, bool isSorted) public returns (bool,uint256) {
     delete array256;
     array256.push(1);
     array256.push(3);
@@ -578,18 +520,7 @@ contract ArrayUtilsTestContractTwo {
     return array256.indexOf(value,isSorted);
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function getNoIndexOf128(uint128 value, bool isSorted) returns (bool,uint256) </span>{
-    delete array128;
-    array128.push(1);
-    array128.push(3);
-    array128.push(4);
-    array128.push(7);
-    array128.push(9);
-    array128.push(1095);
-<span class="cstat-no" title="statement not covered" >    return array128.indexOf(value,isSorted);</span>
-  }
-&nbsp;
-  function getNoIndexOf64(uint64 value, bool isSorted) returns (bool,uint256) {
+  function getNoIndexOf64(uint64 value, bool isSorted) public returns (bool,uint256) {
     delete array64;
     array64.push(1);
     array64.push(3);
@@ -607,7 +538,7 @@ contract ArrayUtilsTestContractTwo {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 25 2017 23:45:25 GMT-0600 (CST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 07 2018 17:31:55 GMT-0500 (CDT)
 </div>
 </div>
 <script src="../prettify.js"></script>

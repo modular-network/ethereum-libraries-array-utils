@@ -22,12 +22,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>71/71</span>
+        <span class='fraction'>72/72</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">96.15% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>24/24</span>
+        <span class='fraction'>25/26</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>89/89</span>
+        <span class='fraction'>90/90</span>
       </div>
     </div>
   </div>
@@ -300,7 +300,9 @@
 255
 256
 257
-258</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+258
+259
+260</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -483,6 +485,7 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-yes">5×</span>
@@ -537,6 +540,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -557,25 +561,25 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.4.18;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.4.21;
 &nbsp;
 /**
  * @title Array32 Library
- * @author Majoolr.io
+ * @author Modular Inc, https://modular.network
  *
- * version 1.1.0
- * Copyright (c) 2017 Majoolr, LLC
+ * version 1.2.0
+ * Copyright (c) 2017 Modular, Inc
  * The MIT License (MIT)
- * https://github.com/Majoolr/ethereum-libraries/blob/master/LICENSE
+ * https://github.com/Modular-Network/ethereum-libraries/blob/master/LICENSE
  *
  * The Array32 Library provides a few utility functions to work with
- * storage uint32[] types in place. Majoolr provides smart contract services
+ * storage uint32[] types in place. Modular provides smart contract services
  * and security reviews for contract deployments in addition to working on open
  * source projects in the Ethereum community. Our purpose is to test, document,
  * and deploy reusable code onto the blockchain and improve both security and
  * usability. We also educate non-profits, schools, and other community members
  * about the application of blockchain technology.
- * For further information: majoolr.io
+ * For further information: modular.network
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -732,60 +736,62 @@ library Array32Lib {
   /// @dev Sorts given array in place
   /// @param self Storage array containing uint256 type variables
   function heapSort(uint32[] storage self) public {
-    uint256 end = self.length - 1;
-    uint256 start = getParentI(end);
-    uint256 root = start;
-    uint256 lChild;
-    uint256 rChild;
-    uint256 swap;
-    uint32 temp;
-    while(start &gt;= 0){
-      root = start;
-      lChild = getLeftChildI(start);
-      while(lChild &lt;= end){
-        rChild = lChild + 1;
-        swap = root;
-        if(self[swap] &lt; self[lChild])
-          swap = lChild;
-        if((rChild &lt;= end) &amp;&amp; (self[swap]&lt;self[rChild]))
-          swap = rChild;
-        if(swap == root)
-          lChild = end+1;
-        else {
-          temp = self[swap];
-          self[swap] = self[root];
-          self[root] = temp;
-          root = swap;
-          lChild = getLeftChildI(root);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(self.length &gt; 1){
+      uint256 end = self.length - 1;
+      uint256 start = getParentI(end);
+      uint256 root = start;
+      uint256 lChild;
+      uint256 rChild;
+      uint256 swap;
+      uint32 temp;
+      while(start &gt;= 0){
+        root = start;
+        lChild = getLeftChildI(start);
+        while(lChild &lt;= end){
+          rChild = lChild + 1;
+          swap = root;
+          if(self[swap] &lt; self[lChild])
+            swap = lChild;
+          if((rChild &lt;= end) &amp;&amp; (self[swap]&lt;self[rChild]))
+            swap = rChild;
+          if(swap == root)
+            lChild = end+1;
+          else {
+            temp = self[swap];
+            self[swap] = self[root];
+            self[root] = temp;
+            root = swap;
+            lChild = getLeftChildI(root);
+          }
         }
+        if(start == 0)
+          break;
+        else
+          start = start - 1;
       }
-      if(start == 0)
-        break;
-      else
-        start = start - 1;
-    }
-    while(end &gt; 0){
-      temp = self[end];
-      self[end] = self[0];
-      self[0] = temp;
-      end = end - 1;
-      root = 0;
-      lChild = getLeftChildI(0);
-      while(lChild &lt;= end){
-        rChild = lChild + 1;
-        swap = root;
-        if(self[swap] &lt; self[lChild])
-          swap = lChild;
-        if((rChild &lt;= end) &amp;&amp; (self[swap]&lt;self[rChild]))
-          swap = rChild;
-        if(swap == root)
-          lChild = end + 1;
-        else {
-          temp = self[swap];
-          self[swap] = self[root];
-          self[root] = temp;
-          root = swap;
-          lChild = getLeftChildI(root);
+      while(end &gt; 0){
+        temp = self[end];
+        self[end] = self[0];
+        self[0] = temp;
+        end = end - 1;
+        root = 0;
+        lChild = getLeftChildI(0);
+        while(lChild &lt;= end){
+          rChild = lChild + 1;
+          swap = root;
+          if(self[swap] &lt; self[lChild])
+            swap = lChild;
+          if((rChild &lt;= end) &amp;&amp; (self[swap]&lt;self[rChild]))
+            swap = rChild;
+          if(swap == root)
+            lChild = end + 1;
+          else {
+            temp = self[swap];
+            self[swap] = self[root];
+            self[root] = temp;
+            root = swap;
+            lChild = getLeftChildI(root);
+          }
         }
       }
     }
@@ -820,7 +826,7 @@ library Array32Lib {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 25 2017 23:45:25 GMT-0600 (CST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 07 2018 17:31:55 GMT-0500 (CDT)
 </div>
 </div>
 <script src="../prettify.js"></script>
