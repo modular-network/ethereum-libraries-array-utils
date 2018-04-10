@@ -4,7 +4,7 @@ pragma solidity 0.4.21;
  * @title Array256 Library
  * @author Modular Inc, https://modular.network
  *
- * version 1.2.0
+ * version 1.2.1
  * Copyright (c) 2017 Modular, Inc
  * The MIT License (MIT)
  * https://github.com/Modular-Network/ethereum-libraries/blob/master/LICENSE

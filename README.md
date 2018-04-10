@@ -100,7 +100,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### How to install
 
-`npm install ethereum-libraries-basic-math`
+`npm install ethereum-libraries-array-utils`
 
 #### How to link
 
